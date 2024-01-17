@@ -18,8 +18,10 @@ export const getServerSideProps = async ({
   params: { id: number };
 }) => {
   const project = await projectService.one(params.id);
-  const media = await mediaService.one(project.featured_media);
-  return { props: { project, featuredImageUrl: media.source_url } };
+  const media = project.featured_media
+    ? await mediaService.one(project.featured_media)
+    : null;
+  return { props: { project, featuredImageUrl: media?.source_url ?? "" } };
 };
 
 export default function Project({ project, featuredImageUrl }: ProjectProps) {

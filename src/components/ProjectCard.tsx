@@ -1,7 +1,6 @@
 import { renderedToPlainString } from "@/helpers";
 import { TMedia, TProject } from "@/types";
 import Card from "./Card";
-import Image from "next/image";
 import Link from "next/link";
 
 type ProjectCardProps = {
@@ -12,6 +11,7 @@ type ProjectCardProps = {
 export const ProjectCard = ({ project, mediasMapper }: ProjectCardProps) => {
   const featureImageUrl =
     mediasMapper[project.featured_media]?.source_url ?? "";
+
   return (
     <Card className="bg-opacity-0 border-0 hover:bg-opacity-100 hover:border-1">
       <div

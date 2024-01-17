@@ -8,6 +8,10 @@ const nextConfig = {
         hostname: 'localhost',
         port: '3000',
       },
+      {
+        protocol: 'http',
+        hostname: 'edovanie-profile-cms.x10.mx'
+      }
     ],
   },
 }
