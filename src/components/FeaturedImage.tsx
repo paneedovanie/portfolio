@@ -14,7 +14,7 @@ export default function FeaturedImage({ url, ...props }: FeaturedImage) {
         props.className
       }
       style={{
-        backgroundImage: `url(${replace(url, "http:", `https:`)})`,
+        backgroundImage: `url(${url})`,
         ...props.style,
       }}
     />
