@@ -1,18 +1,22 @@
 import { map } from "lodash";
 import Card from "./Card";
-import { useRef, useState } from "react";
+import { HTMLAttributes, useRef, useState } from "react";
 import Image from "next/image";
 
-type ImagesCarouselProps = {
+type ImagesCarouselProps = HTMLAttributes<HTMLDivElement> & {
   imagesUrl: string[];
 };
 
-export default function ImagesCarousel({ imagesUrl }: ImagesCarouselProps) {
+export default function ImagesCarousel({
+  imagesUrl,
+  ...props
+}: ImagesCarouselProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedImage = imagesUrl[selectedIndex];
 
-  const handleClick = () => {
+  const handleClick = (index: number) => {
+    setSelectedIndex(index);
     dialogRef.current?.showModal();
     document.body.style.overflow = "hidden";
   };
@@ -31,17 +35,17 @@ export default function ImagesCarousel({ imagesUrl }: ImagesCarouselProps) {
 
   return (
     <>
-      <div className="overflow-auto w-full">
+      <div {...props} className={"overflow-auto w-full " + props.className}>
         <div className="flex gap-1 min-w-[max-content]">
-          {map(imagesUrl, (url) => {
+          {map(imagesUrl, (url, i) => {
             return (
               <Card
-                key={url}
-                className="bg-center bg-cover h-[200px] w-[200px] rounded-2xl cursor-pointer"
+                key={i}
+                className="bg-center bg-cover h-[100px] w-[100px] rounded-2xl cursor-pointer"
                 style={{
                   backgroundImage: `url(${url})`,
                 }}
-                onClick={handleClick}
+                onClick={() => handleClick(i)}
               />
             );
           })}

@@ -12,7 +12,7 @@ export const EducationCard = ({ education }: EducationCardProps) => {
       <h4 className="text-xl">
         {renderedToPlainString(education.title.rendered)}
       </h4>
-      <div>{education.school}</div>
+      <h5>{education.school}</h5>
       <small>{education.duration}</small>
     </Card>
   );

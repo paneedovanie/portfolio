@@ -1,15 +1,18 @@
 import Card from "@/components/Card";
+import Chip from "@/components/Chip";
+import FeaturedImage from "@/components/FeaturedImage";
 import ImagesCarousel from "@/components/ImagesCarousel";
 import { renderedToPlainString } from "@/helpers";
-import { mediaService, projectService } from "@/services";
-import { TProject } from "@/types";
-import { map } from "lodash";
+import { mediaService, projectService, tagService } from "@/services";
+import { TProject, TTag } from "@/types";
+import { forEach, map } from "lodash";
 import Head from "next/head";
 import Link from "next/link";
 
 type ProjectProps = {
   project: TProject;
   featuredImageUrl: string;
+  tagsMapper: Record<number, TTag>;
 };
 
 export const getServerSideProps = async ({
@@ -21,10 +24,21 @@ export const getServerSideProps = async ({
   const media = project.featured_media
     ? await mediaService.one(project.featured_media)
     : null;
-  return { props: { project, featuredImageUrl: media?.source_url ?? "" } };
+  const tags = await tagService.many({ ids: project.tags });
+  const tagsMapper: Record<number, TTag> = {};
+  forEach(tags, (t) => {
+    tagsMapper[t.id] = t;
+  });
+  return {
+    props: { project, featuredImageUrl: media?.source_url ?? "", tagsMapper },
+  };
 };
 
-export default function Project({ project, featuredImageUrl }: ProjectProps) {
+export default function Project({
+  project,
+  featuredImageUrl,
+  tagsMapper,
+}: ProjectProps) {
   return (
     <>
       <Head>
@@ -33,7 +47,7 @@ export default function Project({ project, featuredImageUrl }: ProjectProps) {
       <main className="px-3">
         <div className="w-full max-w-[1024px] md:mx-auto">
           <div className="py-5">
-            <Link href="/" className="text-sm">
+            <Link href="/#projects" className="text-sm">
               Back to Home
             </Link>
           </div>
@@ -52,17 +66,18 @@ export default function Project({ project, featuredImageUrl }: ProjectProps) {
                 <div className="mb-5">{project.description}</div>
               </div>
               <div className="order-1 md:order-2">
-                <div
-                  className="bg-center bg-cover h-[200px] w-[200px] rounded-2xl"
-                  style={{
-                    backgroundImage: `url(${featuredImageUrl})`,
-                  }}
-                />
+                <FeaturedImage className="w-[200px]" url={featuredImageUrl} />
               </div>
             </div>
             <ImagesCarousel
+              className="mb-3"
               imagesUrl={map(project.images, (img) => img.guid)}
             />
+            <div className="flex gap-1 flex-wrap">
+              {map(project.tags, (t, i) => {
+                return <Chip text={tagsMapper[t].name} key={i} />;
+              })}
+            </div>
           </Card>
         </div>
       </main>

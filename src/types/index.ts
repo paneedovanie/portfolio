@@ -4,3 +4,4 @@ export * from "./education.type";
 export * from "./contact.type";
 export * from "./profile.type";
 export * from "./media.type";
+export * from "./tag.type";

@@ -10,7 +10,7 @@ export default function EducationsSection({
   educations,
 }: EducationsSectionProps) {
   return (
-    <section className="section min-h-full px-3">
+    <section id="educations" className="section min-h-full p-3">
       <div className="w-full max-w-[1024px] md:mx-auto">
         <div className="py-5">
           <h2 className="text-3xl text-center my-5">Educations</h2>

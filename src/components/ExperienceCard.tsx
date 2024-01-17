@@ -1,34 +1,25 @@
 import { renderedToPlainString } from "@/helpers";
 import { TExperience } from "@/types";
 import Card from "./Card";
-import { useState } from "react";
+import Link from "next/link";
 
 type ExperienceCardProps = {
   experience: TExperience;
 };
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
-  const [showMore, setShowMore] = useState(false);
-
-  const handleClick = () => {
-    setShowMore(true);
-  };
-
   return (
-    <Card
-      className={`${showMore ? "" : "cursor-pointer"}`}
-      onClick={handleClick}
-    >
+    <Card className="hover:shadow">
       <h4 className="text-xl">
         {renderedToPlainString(experience.title.rendered)}
       </h4>
-      <div>{experience.company}</div>
-      {showMore && (
-        <div>
-          <small>{experience.duration}</small>
-          <div>{experience.description}</div>
-        </div>
-      )}
+      <h5>{experience.company}</h5>
+      <div className="mb-5">
+        <small>{experience.duration}</small>
+      </div>
+      <div>
+        <Link href={`/experiences/${experience.id}`}>View</Link>
+      </div>
     </Card>
   );
 };

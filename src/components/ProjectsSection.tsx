@@ -12,12 +12,12 @@ export default function ProjectsSection({
   mediasMapper,
 }: ProjectsSectionProps) {
   return (
-    <section className="section min-h-full px-3">
+    <section id="projects" className="section min-h-full p-3">
       <div className="w-full max-w-[1024px] md:mx-auto">
         <div className="py-5">
           <h2 className="text-3xl text-center my-5">Projects</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {map(projects, (x: TProject, i: number) => (
             <ProjectCard project={x} key={i} mediasMapper={mediasMapper} />
           ))}

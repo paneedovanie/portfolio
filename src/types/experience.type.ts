@@ -1,4 +1,5 @@
 export type TExperience = {
+  id: number;
   title: {
     rendered: string;
   };
