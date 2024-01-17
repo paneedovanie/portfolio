@@ -41,12 +41,17 @@ export default function ImagesCarousel({
             return (
               <Card
                 key={i}
-                className="bg-center bg-cover h-[100px] w-[100px] rounded-2xl cursor-pointer"
-                style={{
-                  backgroundImage: `url(${url})`,
-                }}
+                className="h-[100px] w-[100px] rounded-2xl cursor-pointer shadow overflow-hidden p-0"
                 onClick={() => handleClick(i)}
-              />
+              >
+                <Image
+                  src={url}
+                  alt="App Image"
+                  width={1000}
+                  height={1000}
+                  className="object-cover object-center w-full h-full"
+                />
+              </Card>
             );
           })}
         </div>
