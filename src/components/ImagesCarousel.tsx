@@ -39,9 +39,9 @@ export default function ImagesCarousel({
         <div className="flex gap-1 min-w-[max-content]">
           {map(imagesUrl, (url, i) => {
             return (
-              <Card
+              <div
                 key={i}
-                className="h-[100px] w-[100px] rounded-2xl cursor-pointer shadow overflow-hidden p-0"
+                className="border border-gray-200 h-[100px] w-[100px] rounded-xl cursor-pointer shadow overflow-hidden p-0"
                 onClick={() => handleClick(i)}
               >
                 <Image
@@ -51,7 +51,7 @@ export default function ImagesCarousel({
                   height={1000}
                   className="object-cover object-center w-full h-full"
                 />
-              </Card>
+              </div>
             );
           })}
         </div>
