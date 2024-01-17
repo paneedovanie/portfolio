@@ -9,6 +9,10 @@ const nextConfig = {
         port: '3000',
       },
       {
+        protocol: 'https',
+        hostname: 'edovanie-profile-cms.x10.mx'
+      },
+      {
         protocol: 'http',
         hostname: 'edovanie-profile-cms.x10.mx'
       }
