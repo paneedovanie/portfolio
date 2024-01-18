@@ -9,7 +9,7 @@ type ExperienceCardProps = {
 
 export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
   return (
-    <Card className="hover:shadow">
+    <Card className="hover:shadow bg-white">
       <h4 className="text-xl">
         {renderedToPlainString(experience.title.rendered)}
       </h4>

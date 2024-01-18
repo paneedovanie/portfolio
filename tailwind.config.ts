@@ -11,10 +11,12 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#2c3e50",
+        secondary: "#eee",
         success: {
           100: colors.green[100],
           DEFAULT: colors.green[900],
         },
+
         error: {
           100: colors.red[100],
           DEFAULT: colors.red[900],

@@ -12,7 +12,7 @@ export default function ProjectsSection({
   mediasMapper,
 }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="section min-h-full p-3">
+    <section id="projects" className="section min-h-full p-3 bg-secondary">
       <div className="w-full max-w-[1024px] md:mx-auto">
         <div className="py-5">
           <h2 className="text-3xl text-center my-5">Projects</h2>
