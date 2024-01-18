@@ -52,7 +52,7 @@ export default function Project({
               Back to Home
             </Link>
           </div>
-          <Card>
+          <Card className="bg-white">
             <div className="flex flex-col md:flex-row mb-5 gap-3">
               <div className="flex-1 order-2 md:order-1">
                 <div className="mb-5">

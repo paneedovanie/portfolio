@@ -3,18 +3,30 @@ import { TMedia, TProject } from "@/types";
 import Card from "./Card";
 import Link from "next/link";
 import FeaturedImage from "./FeaturedImage";
+import { InView } from "react-intersection-observer";
+import { HTMLAttributes, Ref } from "react";
 
-type ProjectCardProps = {
+type ProjectCardProps = HTMLAttributes<HTMLDivElement> & {
   project: TProject;
   mediasMapper: Record<number, TMedia>;
 };
 
-export const ProjectCard = ({ project, mediasMapper }: ProjectCardProps) => {
+export const ProjectCard = ({
+  project,
+  mediasMapper,
+  ...props
+}: ProjectCardProps) => {
   const featureImageUrl =
     mediasMapper[project.featured_media]?.source_url ?? "";
 
   return (
-    <Card className="bg-opacity-0 border-0 hover:bg-opacity-100 hover:border-1">
+    <Card
+      {...props}
+      className={
+        "bg-white bg-opacity-0 border-0 hover:bg-opacity-100 hover:border-1 " +
+        props.className
+      }
+    >
       <FeaturedImage url={featureImageUrl} />
       <h4 className="text-xl mb-1">
         {renderedToPlainString(project.title.rendered)}

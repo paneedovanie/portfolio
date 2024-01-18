@@ -9,7 +9,7 @@ type ContactsSectionProps = {
 
 export default function ContactsSection({ contacts }: ContactsSectionProps) {
   return (
-    <section id="contacts" className="section min-h-full p-3">
+    <section id="contacts" className="section min-h-[100vh] p-3">
       <div className="w-full max-w-[1024px] md:mx-auto">
         <div className="py-5">
           <h2 className="text-3xl text-center my-5 text-white">Contacts</h2>

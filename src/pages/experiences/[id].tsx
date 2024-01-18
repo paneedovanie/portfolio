@@ -50,7 +50,7 @@ export default function Experience({
               Back to Home
             </Link>
           </div>
-          <Card>
+          <Card className="bg-white">
             <div className="flex flex-col md:flex-row mb-5 gap-3">
               <div>
                 <div className="mb-5">

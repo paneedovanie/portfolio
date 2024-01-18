@@ -15,6 +15,8 @@ body, #__next {
   height: 100%;
   font-family: 'Open Sans', sans-serif;
   color: #384b5f;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url('/bg.jpg');
+  background-attachment: fixed;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -28,15 +30,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-.sections-container {
-  scroll-snap-type: y proximity;
-  overflow-y: scroll;
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url('/bg.jpg');
-}
-
-.section {
-  scroll-snap-align: start;
 }

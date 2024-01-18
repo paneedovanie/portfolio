@@ -8,7 +8,12 @@ type EducationCardProps = {
 
 export const EducationCard = ({ education }: EducationCardProps) => {
   return (
-    <Card className="bg-opacity-0 hover:bg-opacity-100">
+    <Card
+      className="bg-white bg-opacity-0 hover:bg-opacity-100"
+      style={{
+        backgroundImage: "inherit",
+      }}
+    >
       <h4 className="text-xl">
         {renderedToPlainString(education.title.rendered)}
       </h4>
