@@ -41,6 +41,7 @@ export default function Experience({
     <>
       <Head>
         <title>Edovanie Hiramis</title>
+        <meta name="description" content="Edovanie Portfolio - Experience" />
       </Head>
       <main className="px-3">
         <div className="w-full max-w-[1024px] md:mx-auto">

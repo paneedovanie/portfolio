@@ -43,6 +43,7 @@ export default function Project({
     <>
       <Head>
         <title>Edovanie Hiramis</title>
+        <meta name="description" content="Edovanie Portfolio - Project" />
       </Head>
       <main className="px-3">
         <div className="w-full max-w-[1024px] md:mx-auto">
