@@ -26,8 +26,8 @@ export default function IntroductionSection({
       <div className="w-full max-w-[1024px] md:mx-auto">
         <div>
           <h1 className="text-5xl text-center text-secondary">{fullName}</h1>
-          <h3 className="text-2xl text-center text-secondary">{role}</h3>
-          <h4 className="text-center text-secondary">{location}</h4>
+          <h2 className="text-2xl text-center text-secondary">{role}</h2>
+          <h3 className="text-center text-secondary">{location}</h3>
         </div>
       </div>
     </section>

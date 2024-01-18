@@ -72,6 +72,7 @@ export default function Home({
     <>
       <Head>
         <title>Edovanie Hiramis</title>
+        <meta name="description" content="Edovanie Portfolio" />
       </Head>
       <main className="sections-container">
         <IntroductionSection profiles={profiles} />
