@@ -20,7 +20,7 @@ import {
   TProject,
   TMedia,
 } from "@/types";
-import axios from "axios";
+import axios from 'axios';
 import { forEach, map } from "lodash";
 import Head from "next/head";
 
@@ -34,7 +34,9 @@ type HomeProps = {
 };
 
 export const getServerSideProps = async () => {
-  await axios.get(API_BASE_URL + "/wp-admin");
+  await axios.get(API_BASE_URL + "/wp-admin", { 
+    timeout: 30_000, 
+  });
   const experiences = await experienceService.many();
   const projects = await projectService.many();
   const educations = await educationService.many();
