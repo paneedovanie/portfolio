@@ -13,7 +13,7 @@ export default function EducationsSection({
   return (
     <section
       id="educations"
-      className="section min-h-[100vh] p-3 bg-secondary relative"
+      className="section min-h-[100vh] p-3 bg-secondary overflow-hidden relative"
     >
       <div className=" w-full max-w-[1024px] md:mx-auto relative h-full z-20">
         <div className="py-5">
