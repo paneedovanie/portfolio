@@ -33,6 +33,8 @@ type HomeProps = {
   mediasMapper: Record<number, TMedia>;
 };
 
+export const maxDuration = 10;
+
 export const getServerSideProps = async () => {
   await axios.get(API_BASE_URL + "/wp-admin");
   const experiences = await experienceService.many();
