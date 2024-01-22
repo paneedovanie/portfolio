@@ -45,14 +45,17 @@ export default function Project({
         <title>Edovanie Hiramis</title>
         <meta name="description" content="Edovanie Portfolio - Project" />
       </Head>
-      <main className="px-3">
+      <main className="p-3">
         <div className="w-full max-w-[1024px] md:mx-auto">
-          <div className="py-5">
-            <Link href="/#projects" className="text-sm">
-              Back to Home
-            </Link>
-          </div>
           <Card className="bg-white">
+            <div className="mb-5">
+              <Link
+                href="/#projects"
+                className="text-sm bg-secondary text-primary py-2 px-3 rounded-md border border-primary"
+              >
+                Back
+              </Link>
+            </div>
             <div className="flex flex-col md:flex-row mb-5 gap-3">
               <div className="flex-1 order-2 md:order-1">
                 <div className="mb-5">

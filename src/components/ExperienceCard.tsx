@@ -18,7 +18,12 @@ export const ExperienceCard = ({ experience }: ExperienceCardProps) => {
         <small>{experience.duration}</small>
       </div>
       <div>
-        <Link href={`/experiences/${experience.id}`}>View</Link>
+        <Link
+          href={`/experiences/${experience.id}`}
+          className="inline-block bg-primary text-center text-white py-2 px-3 rounded-md w-full sm:w-auto"
+        >
+          View
+        </Link>
       </div>
     </Card>
   );

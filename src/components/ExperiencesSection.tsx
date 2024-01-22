@@ -26,7 +26,9 @@ export default function ExperiencesSection({
                 <div
                   ref={ref}
                   style={{
-                    transform: inView ? "" : `translateX(-100vh)`,
+                    // transform: inView
+                    //   ? "translateX(0vh)"
+                    //   : `translateX(-100vh)`,
                     opacity: inView ? 1 : 0,
                     transitionDuration: "1s",
                   }}

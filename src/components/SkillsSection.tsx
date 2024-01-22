@@ -13,7 +13,7 @@ export default function SkillsSection({ skills }: SkillsSectionProps) {
         <div className="py-5">
           <h2 className="text-3xl text-center my-5 text-white">Skills</h2>
         </div>
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {map(skills, (x: TSkill, i: number) => (
             <SkillCard skill={x} key={i} />
           ))}

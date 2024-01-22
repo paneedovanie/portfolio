@@ -33,7 +33,12 @@ export const ProjectCard = ({
       </h4>
       <div className="mb-5 line-clamp-1">{project.description}</div>
       <div>
-        <Link href={`/projects/${project.id}`}>View</Link>
+        <Link
+          href={`/projects/${project.id}`}
+          className="inline-block bg-primary text-center text-white py-2 px-3 rounded-md w-full sm:w-auto"
+        >
+          View
+        </Link>
       </div>
     </Card>
   );

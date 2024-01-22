@@ -27,7 +27,7 @@ export default function EducationsSection({
                 <div
                   ref={ref}
                   style={{
-                    transform: inView ? "" : `translateX(100vh)`,
+                    // transform: inView ? "" : `translateX(100vh)`,
                     opacity: inView ? 1 : 0,
                     transitionDuration: "1s",
                   }}
