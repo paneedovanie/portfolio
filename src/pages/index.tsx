@@ -3,6 +3,7 @@ import EducationsSection from "@/components/EducationsSection";
 import ExperiencesSection from "@/components/ExperiencesSection";
 import IntroductionSection from "@/components/IntroductionSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
 import { API_BASE_URL } from "@/constants";
 import {
   contactService,
@@ -11,6 +12,7 @@ import {
   mediaService,
   profileService,
   projectService,
+  skillService,
 } from "@/services";
 import {
   TContact,
@@ -19,6 +21,7 @@ import {
   TProfile,
   TProject,
   TMedia,
+  TSkill,
 } from "@/types";
 import axios from "axios";
 import { forEach, map } from "lodash";
@@ -30,6 +33,7 @@ type HomeProps = {
   educations: TEducation[];
   contacts: TContact[];
   profiles: TProfile[];
+  skills: TSkill[];
   mediasMapper: Record<number, TMedia>;
 };
 
@@ -44,6 +48,7 @@ export const getServerSideProps = async () => {
   const educations = await educationService.many();
   const contacts = await contactService.many();
   const profiles = await profileService.many();
+  const skills = await skillService.many();
 
   const medias = await mediaService.many({
     ids: map(projects, (p) => p.featured_media),
@@ -62,6 +67,7 @@ export const getServerSideProps = async () => {
       educations,
       contacts,
       profiles,
+      skills,
       mediasMapper,
     },
   };
@@ -73,6 +79,7 @@ export default function Home({
   educations,
   contacts,
   profiles,
+  skills,
   mediasMapper,
 }: HomeProps) {
   return (
@@ -83,6 +90,7 @@ export default function Home({
       </Head>
       <main className="sections-container">
         <IntroductionSection profiles={profiles} />
+        <SkillsSection skills={skills} />
         <ProjectsSection projects={projects} mediasMapper={mediasMapper} />
         <ExperiencesSection experiences={experiences} />
         <EducationsSection educations={educations} />

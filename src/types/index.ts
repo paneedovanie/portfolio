@@ -5,3 +5,4 @@ export * from "./contact.type";
 export * from "./profile.type";
 export * from "./media.type";
 export * from "./tag.type";
+export * from "./skill.type";
