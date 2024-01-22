@@ -2,6 +2,7 @@ import { TEducation } from "@/types";
 import { map } from "lodash";
 import { EducationCard } from "./EducationCard";
 import { Parallax } from "react-scroll-parallax";
+import { InView } from "react-intersection-observer";
 
 type EducationsSectionProps = {
   educations: TEducation[];
@@ -21,7 +22,20 @@ export default function EducationsSection({
         </div>
         <div className="flex flex-col gap-3">
           {map(educations, (x: TEducation, i: number) => (
-            <EducationCard education={x} key={i} />
+            <InView key={i}>
+              {({ inView, ref, entry }) => (
+                <div
+                  ref={ref}
+                  style={{
+                    transform: inView ? "" : `translateX(100vh)`,
+                    opacity: inView ? 1 : 0,
+                    transitionDuration: "1s",
+                  }}
+                >
+                  <EducationCard education={x} key={i} />
+                </div>
+              )}
+            </InView>
           ))}
         </div>
       </div>

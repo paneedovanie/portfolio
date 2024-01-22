@@ -37,7 +37,7 @@ export default function ProjectsSection({
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {map(projects, (x: TProject, i: number) => (
-            <InView triggerOnce>
+            <InView key={i}>
               {({ inView, ref, entry }) => (
                 <div
                   ref={ref}
@@ -50,11 +50,7 @@ export default function ProjectsSection({
                     transitionDuration: "1s",
                   }}
                 >
-                  <ProjectCard
-                    project={x}
-                    key={i}
-                    mediasMapper={mediasMapper}
-                  />
+                  <ProjectCard project={x} mediasMapper={mediasMapper} />
                 </div>
               )}
             </InView>

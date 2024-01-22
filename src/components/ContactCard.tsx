@@ -33,7 +33,7 @@ const typeElement: Record<
 
 export const ContactCard = ({ contact }: ContactCardProps) => {
   return (
-    <div className="flex gap-1">
+    <div className="flex flex-col md:flex-row gap-1">
       <div>{renderedToPlainString(contact.title.rendered)}: </div>
       <div>{typeElement[contact.contact_type]({ value: contact.value })}</div>
     </div>

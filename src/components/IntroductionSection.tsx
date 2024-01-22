@@ -1,7 +1,7 @@
 import { TProfile } from "@/types";
-import { find, forEach } from "lodash";
+import { forEach } from "lodash";
 import { useMemo } from "react";
-import { Parallax } from "react-scroll-parallax";
+import ArrowDown from "./svg/ArrowDown";
 
 type IntroductionSectionProps = {
   profiles: TProfile[];
@@ -25,10 +25,16 @@ export default function IntroductionSection({
   return (
     <section className="section h-[100vh] flex items-center justify-center px-3 overflow-hidden">
       <div className="w-full max-w-[1024px] md:mx-auto">
-        <div>
+        <div className="mb-3">
           <h1 className="text-5xl text-center text-white">{fullName}</h1>
           <h2 className="text-2xl text-center text-secondary">{role}</h2>
           <h3 className="text-center text-secondary">{location}</h3>
+        </div>
+
+        <div className="group flex justify-center">
+          <div className="text-white animate-bounce">
+            <ArrowDown />
+          </div>
         </div>
       </div>
     </section>

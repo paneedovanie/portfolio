@@ -1,5 +1,4 @@
 import { map } from "lodash";
-import Card from "./Card";
 import { HTMLAttributes, useRef, useState } from "react";
 import Image from "next/image";
 

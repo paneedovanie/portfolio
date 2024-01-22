@@ -2,6 +2,7 @@ import { TContact } from "@/types";
 import { map } from "lodash";
 import { ContactCard } from "./ContactCard";
 import Card from "./Card";
+import CircularName from "./svg/CircularName";
 
 type ContactsSectionProps = {
   contacts: TContact[];
@@ -9,8 +10,8 @@ type ContactsSectionProps = {
 
 export default function ContactsSection({ contacts }: ContactsSectionProps) {
   return (
-    <section id="contacts" className="section min-h-[100vh] p-3">
-      <div className="w-full max-w-[1024px] md:mx-auto">
+    <section id="contacts" className="sectionp-3">
+      <div className="w-full max-w-[1024px] md:mx-auto min-h-[100vh] flex flex-col">
         <div className="py-5">
           <h2 className="text-3xl text-center my-5 text-white">Contacts</h2>
         </div>
@@ -19,6 +20,13 @@ export default function ContactsSection({ contacts }: ContactsSectionProps) {
             <ContactCard contact={x} key={i} />
           ))}
         </Card>
+        <div className="flex justify-center items-center text-white flex-1">
+          <div>
+            <div className="animate-spin" style={{ animationDuration: "20s" }}>
+              <CircularName />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
