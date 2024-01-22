@@ -48,7 +48,7 @@ export const getServerSideProps = async () => {
   const educations = await educationService.many();
   const contacts = await contactService.many();
   const profiles = await profileService.many();
-  const skills = await skillService.many();
+  const skills = await skillService.many({ per_page: 100 });
 
   const medias = await mediaService.many({
     ids: map(projects, (p) => p.featured_media),

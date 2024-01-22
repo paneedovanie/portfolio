@@ -1,8 +1,6 @@
 import { TSkill } from "@/types";
 import { map } from "lodash";
 import { SkillCard } from "./SkillCard";
-import Card from "./Card";
-import CircularName from "./svg/CircularName";
 
 type SkillsSectionProps = {
   skills: TSkill[];
