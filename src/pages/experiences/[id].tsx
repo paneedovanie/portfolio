@@ -56,7 +56,7 @@ export default function Experience({
           <Card className="bg-white">
             <div className="mb-5">
               <Link
-                href="/#projects"
+                href="/#experiences"
                 className="text-sm bg-secondary text-primary py-2 px-3 rounded-md border border-primary"
               >
                 Back
