@@ -4,7 +4,6 @@ import ExperiencesSection from "@/components/ExperiencesSection";
 import IntroductionSection from "@/components/IntroductionSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import { API_BASE_URL, REVALIDATE } from "@/constants";
 import {
   contactService,
   educationService,
@@ -38,7 +37,7 @@ type HomeProps = {
 
 export const maxDuration = 10;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const experiences = await experienceService.many();
   const projects = await projectService.many();
   const educations = await educationService.many();

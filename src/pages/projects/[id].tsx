@@ -15,12 +15,17 @@ type ProjectProps = {
   tagsMapper: Record<number, TTag>;
 };
 
-export const generateStaticParams = async () => {
+export async function getStaticPaths() {
   const projects = await projectService.many();
-  return projects.map((p) => ({ id: p.id }));
-};
 
-export const getServerSideProps = async ({
+  const paths = projects.map((p) => ({
+    params: { id: p.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export const getStaticProps = async ({
   params,
 }: {
   params: { id: number };

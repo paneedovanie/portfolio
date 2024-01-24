@@ -14,10 +14,15 @@ type ExperienceProps = {
 
 export const generateStaticParams = async () => {
   const experiences = await experienceService.many();
-  return experiences.map((e) => ({ id: e.id }));
+
+  const paths = experiences.map((e) => ({
+    params: { id: e.id.toString() },
+  }));
+
+  return { paths, fallback: false };
 };
 
-export const getServerSideProps = async ({
+export const getStaticProps = async ({
   params,
 }: {
   params: { id: number };
