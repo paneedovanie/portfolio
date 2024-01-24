@@ -12,7 +12,7 @@ type ExperienceProps = {
   tagsMapper: Record<number, TTag>;
 };
 
-export const generateStaticParams = async () => {
+export const getStaticPaths = async () => {
   const experiences = await experienceService.many();
 
   const paths = experiences.map((e) => ({
