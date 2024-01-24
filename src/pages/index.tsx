@@ -81,7 +81,27 @@ export default function Home({
     <>
       <Head>
         <title>Edovanie Hiramis</title>
-        <meta name="description" content="Edovanie Portfolio" />
+        <meta name="description" content="Edovanie Hiramis's Portfolio" />
+        <meta
+          name="keywords"
+          content="Edovanie, Hiramis, Edovanie Hiramis, Portfolio, Edovanie Hiramis's Portfolio"
+        />
+        <meta name="author" content="Edovanie Hiramis" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Edovanie Hiramis" />
+        <meta
+          property="og:description"
+          content="Edovanie Hiramis's Portfolio"
+        />
+        <meta
+          property="og:url"
+          content="https://edovanie-portfolio.vercel.app/"
+        />
+        <meta property="og:site_name" content="Edovanie Portfolio" />
+        <meta
+          property="og:image"
+          content="https://edovanie-portfolio.vercel.app/vercel.svg"
+        />
       </Head>
       <main className="sections-container">
         <IntroductionSection profiles={profiles} />
