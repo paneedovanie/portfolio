@@ -1,7 +1,5 @@
 import Card from "@/components/Card";
 import Chip from "@/components/Chip";
-import FeaturedImage from "@/components/FeaturedImage";
-import ImagesCarousel from "@/components/ImagesCarousel";
 import { renderedToPlainString } from "@/helpers";
 import { experienceService, tagService } from "@/services";
 import { TExperience, TTag } from "@/types";
@@ -12,6 +10,11 @@ import Link from "next/link";
 type ExperienceProps = {
   experience: TExperience;
   tagsMapper: Record<number, TTag>;
+};
+
+export const generateStaticParams = async () => {
+  const experiences = await experienceService.many();
+  return experiences.map((e) => ({ id: e.id }));
 };
 
 export const getServerSideProps = async ({

@@ -4,7 +4,7 @@ import ExperiencesSection from "@/components/ExperiencesSection";
 import IntroductionSection from "@/components/IntroductionSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import { API_BASE_URL } from "@/constants";
+import { API_BASE_URL, REVALIDATE } from "@/constants";
 import {
   contactService,
   educationService,
@@ -23,7 +23,6 @@ import {
   TMedia,
   TSkill,
 } from "@/types";
-import axios from "axios";
 import { forEach, map } from "lodash";
 import Head from "next/head";
 
@@ -40,9 +39,6 @@ type HomeProps = {
 export const maxDuration = 10;
 
 export const getServerSideProps = async () => {
-  await axios.get(API_BASE_URL + "/wp-admin", {
-    timeout: 10_000,
-  });
   const experiences = await experienceService.many();
   const projects = await projectService.many();
   const educations = await educationService.many();
