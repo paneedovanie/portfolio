@@ -80,11 +80,12 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Edovanie Hiramis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Edovanie Hiramis Portfolio</title>
         <meta name="description" content="Edovanie Hiramis's Portfolio" />
         <meta
           name="keywords"
-          content="Edovanie, Hiramis, Edovanie Hiramis, Portfolio, Edovanie Hiramis's Portfolio"
+          content="Edovanie, Hiramis, Edovanie Hiramis, Portfolio, Edovanie Hiramis Portfolio"
         />
         <link rel="canonical" href="https://edovanie-portfolio.vercel.app"></link>
         <meta name="author" content="Edovanie Hiramis" />
