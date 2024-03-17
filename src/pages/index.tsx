@@ -86,6 +86,7 @@ export default function Home({
           name="keywords"
           content="Edovanie, Hiramis, Edovanie Hiramis, Portfolio, Edovanie Hiramis's Portfolio"
         />
+        <link rel="canonical" href="https://edovanie-portfolio.vercel.app"></link>
         <meta name="author" content="Edovanie Hiramis" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Edovanie Hiramis" />
@@ -95,7 +96,7 @@ export default function Home({
         />
         <meta
           property="og:url"
-          content="https://edovanie-portfolio.vercel.app/"
+          content="https://edovanie-portfolio.vercel.app"
         />
         <meta property="og:site_name" content="Edovanie Portfolio" />
         <meta
